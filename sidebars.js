@@ -70,6 +70,18 @@ module.exports = {
         "develop/network-details/full-node-docker",
         "develop/network-details/snapshot-instructions-heimdall-bor",
         "develop/network-details/network-rpc-endpoints",
+        {
+          type: "category",
+          label: "Erigon's Archive Node",
+          link: {
+            type: "generated-index",
+          },
+          items: [
+            "develop/network-details/erigon/client-setup",
+            "develop/network-details/erigon/archive-node-ansible",
+            "develop/network-details/erigon/archive-node-binaries"
+          ]
+        },
       ],
     },
     {
