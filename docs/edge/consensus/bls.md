@@ -11,7 +11,7 @@ keywords:
 
 ## Overview
 
-BLS is a signing algorithm that can aggregate multiple signatures into a signature. In Polygon Edge,BLS is used by default, and can be used to generate `CommittedSeals` and `ParentCommittedSeals` in IBFT Extra of Header. BLS can aggregate these data into one bytes array and reduce block header size. Each chain can choose whether to use BLS or not. The ECDSA key is used regardless of whether the BLS mode is enabled or not, because ProposerSeal, which is signed by Block Proposer, is signed by ECDSA in both modes.
+BLS is a signing algorithm that can aggregate multiple signatures into a signature. In Polygon Edge, BLS is used by default, and can be used to generate `CommittedSeals` and `ParentCommittedSeals` in IBFT Extra of Header. BLS can aggregate these data into one bytes array and reduce block header size. Each chain can choose whether to use BLS or not. The ECDSA key is used regardless of whether the BLS mode is enabled or not, because ProposerSeal, which is signed by Block Proposer, is signed by ECDSA in both modes.
 
 All validators must sign `CommittedSeal` in BLS mode. On the other hand, all validators must sign `CommittedSeal` by ECDSA in the chain that doesn't use BLS.
 
