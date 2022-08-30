@@ -1,5 +1,5 @@
 ---
-id: state 
+id: state
 title: State
 description: Explanation for the state module of Polygon Edge.
 keywords:
@@ -14,7 +14,7 @@ keywords:
 
 To truly understand how **State** works, you must understand some basic Ethereum concepts.<br />
 
-We highly recommend reading the **[State in Ethereum guide](/docs/edge/concepts/ethereum-state)**.
+We highly recommend reading the **[State in Ethereum guide](https://ethereum.github.io/execution-specs/autoapi/ethereum/frontier/state/index.html)**.
 
 ## Overview
 
@@ -38,10 +38,10 @@ The only difference is in what the leaves represent:
 type State interface {
     // Gets a snapshot for a specific hash
 	NewSnapshotAt(types.Hash) (Snapshot, error)
-	
+
 	// Gets the latest snapshot
 	NewSnapshot() Snapshot
-	
+
 	// Gets the codeHash
 	GetCode(hash types.Hash) ([]byte, bool)
 }
@@ -53,7 +53,7 @@ The **Snapshot** interface is defined as such:
 type Snapshot interface {
     // Gets a specific value for a leaf
 	Get(k []byte) ([]byte, bool)
-	
+
 	// Commits new information
 	Commit(objs []*Object) (Snapshot, []byte)
 }
@@ -126,7 +126,7 @@ func (t *Transition) apply(msg *types.Transaction) ([]byte, uint64, bool, error)
 		txn.IncrNonce(msg.From)
 		returnValue, gasLeft, subErr = t.Call2(msg.From, *msg.To, msg.Input, value, gas)
 	}
-	
+
 	if subErr != nil {
 		if subErr == runtime.ErrNotEnoughFunds {
 			txn.RevertToSnapshot(s)
@@ -199,7 +199,7 @@ func (c *state) Run() ([]byte, error) {
 	var vmerr error
 
 	codeSize := len(c.code)
-	
+
 	for !c.stop {
 		if c.ip >= codeSize {
 			c.halt()
@@ -209,18 +209,18 @@ func (c *state) Run() ([]byte, error) {
 		op := OpCode(c.code[c.ip])
 
 		inst := dispatchTable[op]
-		
+
 		if inst.inst == nil {
 			c.exit(errOpCodeNotFound)
 			break
 		}
-		
+
 		// check if the depth of the stack is enough for the instruction
 		if c.sp < inst.stack {
 			c.exit(errStackUnderflow)
 			break
 		}
-		
+
 		// consume the gas of the instruction
 		if !c.consumeGas(inst.gas) {
 			c.exit(errOutOfGas)
@@ -235,14 +235,14 @@ func (c *state) Run() ([]byte, error) {
 			c.exit(errStackOverflow)
 			break
 		}
-		
+
 		c.ip++
 	}
 
 	if err := c.err; err != nil {
 		vmerr = err
 	}
-	
+
 	return c.ret, vmerr
 }
 ````

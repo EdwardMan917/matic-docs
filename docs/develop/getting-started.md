@@ -21,6 +21,14 @@ Welcome to **Polygon (previously Matic Network)**! The most innovative and exci
 
 This guide will introduce you to the Polygon ecosystem. You'll find links to valuable resources and websites that will bring you up to speed on building, not only on Polygon but also on general blockchain application development.
 
+:::tip Stay in the know
+
+Keep up with the latest builder updates from the Polygon 
+team and the community by subscribing to the 
+[Polygon notification groups](https://polygon.technology/notifications/).
+
+:::
+
 ## **Key Features of Polygon**
 
 - **Speed** The Polygon Network uses a high-throughput blockchain with consensus provided by a group of Block Producers selected by stakeholders at each checkpoint. A Proof of Stake layer is used to validate blocks and periodically post proofs of Block Producers to the Ethereum mainnet. This enables rapid block confirmation rates of about 2 seconds while preserving a high amount of decentralization, resulting in excellent throughput for the network.

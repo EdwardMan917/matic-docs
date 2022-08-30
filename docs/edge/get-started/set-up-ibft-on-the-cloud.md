@@ -419,3 +419,19 @@ polygon-edge server --price-limit 100000 ...
 It is worth noting that price limits **are enforced only on non-local transactions**, meaning
 that the price limit does not apply to transactions added locally on the node.
 :::
+
+:::info WebSocket URL
+By default, when you run the Polygon Edge, it generates a WebSocket URL based on the chain location.
+The URL scheme `wss://` is used for HTTPS links, and `ws://` for HTTP.
+
+Localhost WebSocket URL:
+````bash
+ws://localhost:10002/ws
+````
+Please note that the port number depends on the chosen JSON-RPC port for the node.
+
+Edgenet WebSocket URL:
+````bash
+wss://rpc-edgenet.polygon.technology/ws
+````
+:::

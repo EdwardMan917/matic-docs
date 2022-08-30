@@ -87,8 +87,8 @@ module.exports = {
             from: '/docs/integrate/full-node-deployment',
           },
           {
-            to: '/docs/develop/metamask/overview',
-            from: '/docs/develop/wallets/metamask',
+            to: '/docs/develop/wallets/metamask',
+            from:'/docs/develop/metamask/overview',
           },
           {
             to: '/docs/develop/wallets/getting-started',
@@ -239,7 +239,7 @@ module.exports = {
       indexName: "matic_developer",
       appId: '16JCDEHCCN',
       apiKey: "757c19b23127e9c6959da7f13b71cfab",
-      contextualSearch: false,
+      contextualSearch: true,
       algoliaOptions: {},
     },
     navbar: {
@@ -360,6 +360,11 @@ module.exports = {
               rel: null,
             }
           ]
+        },
+        {
+          label: "Notifications",
+          href: 'https://polygon.technology/notifications/',
+          position: "right",
         },
         {
           label: "FAQs",

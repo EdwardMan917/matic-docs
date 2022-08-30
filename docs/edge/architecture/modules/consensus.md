@@ -43,7 +43,7 @@ type Consensus interface {
 The ***Consensus*** interface is the core of the mentioned abstraction. <br />
 * The **VerifyHeader** method represents a helper function which the consensus layer exposes to the **blockchain** layer
 It is there to handle header verification
-* The **Start** method simply starts the consensus process, and everything associated with it. This includes synchronization, 
+* The **Start** method simply starts the consensus process, and everything associated with it. This includes synchronization,
 sealing, everything that needs to be done
 * The **Close** method closes the consensus connection
 
@@ -66,16 +66,15 @@ type Config struct {
 }
 ````
 
-There may be times when you might want to pass in a custom location for the consensus protocol to store data, or perhaps 
-a custom key-value map that you want the consensus mechanism to use. This can be achieved through the ***Config*** struct, 
+There may be times when you might want to pass in a custom location for the consensus protocol to store data, or perhaps
+a custom key-value map that you want the consensus mechanism to use. This can be achieved through the ***Config*** struct,
 which gets read when a new consensus instance is created.
 
 ## IBFT
 
 ### ExtraData
 
-The blockchain header object, among other fields, has a field called **ExtraData**. <br />
-To review the fields present in the block header, please check out the **[State in Ethereum](/docs/edge/concepts/ethereum-state#blocks)** section.
+The blockchain header object, among other fields, has a field called **ExtraData**.
 
 IBFT uses this extra field to store operational information regarding the block, answering questions like:
 * "Who signed this block?"
@@ -320,10 +319,10 @@ func (i *Ibft) processHeaders(headers []*types.Header) error {
 ````
 
 This method is usually called with 1 header, but the flow is the same even with multiple headers. <br />
-For each passed-in header, IBFT needs to verify that the proposer of the header is the validator. This can be done easily by 
+For each passed-in header, IBFT needs to verify that the proposer of the header is the validator. This can be done easily by
 grabbing the latest snapshot, and checking if the node is in the validator set.
 
-Next, the nonce is checked. The vote is included, and tallied - and if there are enough votes a node is added/removed from 
+Next, the nonce is checked. The vote is included, and tallied - and if there are enough votes a node is added/removed from
 the validator set, following which the new snapshot is saved.
 
 #### Snapshot Store
@@ -423,12 +422,12 @@ message View {
 }
 ````
 
-The **View** field in the **MessageReq** represents the current node position inside the chain. 
+The **View** field in the **MessageReq** represents the current node position inside the chain.
 It has a *round*, and a *sequence* attribute.
 * **round** represents the proposer round for the height
 * **sequence** represents the height of the blockchain
 
-The *msgQueue* filed in the IBFT implementation has the purpose of storing message requests. It orders messages by 
+The *msgQueue* filed in the IBFT implementation has the purpose of storing message requests. It orders messages by
 the *View* (firstly by sequence, then by round). The IBFT implementation also possesses different queues for different states in the system.
 
 ### IBFT States
@@ -457,12 +456,12 @@ func (i *Ibft) start() {
 func (i *Ibft) runCycle() {
 	if i.state.view != nil {
 		i.logger.Debug(
-		    "cycle", 
-		    "state", 
-		    i.getState(), 
-		    "sequence", 
-		    i.state.view.Sequence, 
-		    "round", 
+		    "cycle",
+		    "state",
+		    i.getState(),
+		    "sequence",
+		    i.state.view.Sequence,
+		    "round",
 		    i.state.view.Round,
 	    )
 	}
@@ -487,7 +486,7 @@ func (i *Ibft) runCycle() {
 
 All nodes initially start in the **Sync** state.
 
-This is because fresh data needs to be fetched from the blockchain. The client needs to find out if it's the validator, 
+This is because fresh data needs to be fetched from the blockchain. The client needs to find out if it's the validator,
 find the current snapshot. This state resolves any pending blocks.
 
 After the sync finishes, and the client determines it is indeed a validator, it needs to transfer to **AcceptState**.
@@ -498,7 +497,7 @@ If the client is **not** a validator, it will continue syncing, and stay in **Sy
 The **Accept** state always check the snapshot and the validator set. If the current node is not in the validators set,
 it moves back to the **Sync** state.
 
-On the other hand, if the node **is** a validator, it calculates the proposer. If it turns out that the current node is the 
+On the other hand, if the node **is** a validator, it calculates the proposer. If it turns out that the current node is the
 proposer, it builds a block, and sends preprepare and then prepare messages.
 
 * Preprepare messages - messages sent by proposers to validators, to let them know about the proposal
@@ -510,4 +509,4 @@ It waits for the preprepare messages. Once it is confirmed everything is correct
 
 #### ValidateState
 
-The **Validate** state is rather simple - all nodes do in this state is read messages and add them to their local snapshot state. 
+The **Validate** state is rather simple - all nodes do in this state is read messages and add them to their local snapshot state.

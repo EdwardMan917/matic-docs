@@ -6,7 +6,7 @@ description:  Guide to deploy smart contracts using Alchemy.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://matic.network/banners/matic-network-16x9.png
 ---
 
 ## Overview
@@ -24,7 +24,7 @@ If you have questions or concerns, please reach out to the [<ins>official Alchem
 To create a smart contract in this tutorial, you will learn how to use Alchemy's platform to:
 - Create a smart contract application.
 - Check a wallet's balance.
-- Verify contract calls in an explorer. 
+- Verify contract calls in an explorer.
 
 ## What you will do
 
@@ -51,7 +51,7 @@ After creating your account, you have the option of immediately creating your fi
 
 ### Step 2: Create your app (and API key)
 
-After successfully creating an Alchemy account, you will need to generate an API key by creating an app. This authenticates the requests made to the Polygon Mumbai testnet. 
+After successfully creating an Alchemy account, you will need to generate an API key by creating an app. This authenticates the requests made to the Polygon Mumbai testnet.
 > If you’re not familiar with testnets, check out [this testnet guide](https://docs.alchemyapi.io/guides/choosing-a-network).
 
 To generate a new API key, navigate to the "Apps" tab on the Alchemy dashboard navigation bar and select the "Create App" sub-tab.
@@ -77,19 +77,19 @@ You can download and create a Metamask account for free [here](https://metamask.
 3. Connect your wallet to the Mumbai Testnet using the following parameters.
 
     #### Network Name: Polygon Mumbai Testnet
-    
+
     #### New RPC URL: https://polygon-mumbai.g.alchemy.com/v2/your-api-key
-    
+
     #### ChainID: 80001
-    
+
     #### Symbol: MATIC
-    
+
     #### Block Explorer URL: https://mumbai.polygonscan.com/
 
 
 ### Step 4: Add Polygon Mumbai Test MATIC from a Faucet
 
-In order to deploy your smart contract to the test network, you need to obtain a few testnet tokens. To get testnet tokens, visit the [Polygon Mumbai Faucet](https://faucet.polygon.technology/), select "Mumbai", choose "MATIC Token", and enter your Polygon wallet address, then click “Submit.” It may take some time to receive your testnet tokens due to network traffic. 
+In order to deploy your smart contract to the test network, you need to obtain a few testnet tokens. To get testnet tokens, visit the [Polygon Mumbai Faucet](https://faucet.polygon.technology/), select "Mumbai", choose "MATIC Token", and enter your Polygon wallet address, then click “Submit.” It may take some time to receive your testnet tokens due to network traffic.
 
 ![img](/img/alchemy/faucet.png)
 
@@ -107,7 +107,7 @@ After you input your Metamask account address and click “Send Request”, you 
 { "jsonrpc": "2.0", "id": 0, "result": "0xde0b6b3a7640000" }
 ```
 
-:::note 
+:::note
 
 This result is in Wei, not ETH. Wei is used as the smallest denomination of Ether. The conversion from Wei to Ether is: 1 Ether = 10^18 Wei. So, if we convert "0xde0b6b3a7640000" to decimal, we get 1\*10^18, which equals 1 ETH. This can be mapped to 1 MATIC based on denomination.
 
@@ -216,12 +216,6 @@ mkdir scripts
 
 Open up the hello-world project in your favorite editor, such as [VSCode](https://code.visualstudio.com). Smart contracts are written in a language called Solidity which is what we will use to write our HelloWorld.sol smart contract.‌
 
-:::tip
-
-For more information about Solidity, please visit [<ins>our guide</ins>](../home/blockchain-basics/basics-solidity).
-
-:::
-
 1. Navigate to the “contracts” folder and create a new file called `HelloWorld.sol`
 2. Below is a sample Hello World smart contract from the [Ethereum Foundation](https://ethereum.org/en/) that we will be using for this tutorial. Copy and paste in the contents below into your `HelloWorld.sol` file, and be sure to read the comments to understand what this contract does:
 
@@ -288,7 +282,7 @@ If you are using a version control system like git to manage your project, pleas
 :::
 
 * Follow [these instructions](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) to export your private key
-* To get your Alchemy HTTP API key (RPC URL), navigate to your "Hello World" app on your account's dashboard and click "View Key" in the top right corner. 
+* To get your Alchemy HTTP API key (RPC URL), navigate to your "Hello World" app on your account's dashboard and click "View Key" in the top right corner.
 
 Your `.env` should look like this:
 
@@ -413,7 +407,7 @@ The `From` address should match your Metamask account address and the To address
 
 ### Step 17: Verify the contract
 
-Alchemy provides an [explorer](https://dashboard.alchemyapi.io/explorer) where you can find information about the methods deployed along with the smart contract, such as response time, HTTP status, error codes and others. It is a good environment to verify your contract and check whether the transactions went through. 
+Alchemy provides an [explorer](https://dashboard.alchemyapi.io/explorer) where you can find information about the methods deployed along with the smart contract, such as response time, HTTP status, error codes and others. It is a good environment to verify your contract and check whether the transactions went through.
 
 ![img](/img/alchemy/calls.png)
 

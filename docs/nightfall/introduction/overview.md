@@ -85,16 +85,16 @@ as the sender can prove that the correct encryption key was used.
 
 ## Decentralization
 
-Validators and [Challengers](../protocol/challengers.md) are an integral part of Nightfall. They ensure that
+Validators and [Challengers](docs/nightfall/protocol/actors) are an integral part of Nightfall. They ensure that
 transactions and L2 blocks produce timely and correctly. A proof-of-stake (PoS) based consensus mechanism is
-used to select the next [Proposer](../protocol/proposers.md) of the network. On the other hand, Challengers monitor
+used to select the next [Proposer](docs/nightfall/protocol/actors) of the network. On the other hand, Challengers monitor
 the correct operation of the network by raising challenges when an incorrect block is detected and by retaining the
 stake advanced by the Proposer.
 
 
 ## Future Proof
 Thanks to the flexibility provided by the Optimistic rollup implementation of Nightfall, it is possible to include new transactions
-in the future without compromising existing transactions by just defining and registering a new circuit type that implemented the 
+in the future without compromising existing transactions by just defining and registering a new circuit type that implemented the
 transaction in ZK.
 
 ## References

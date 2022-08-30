@@ -29,6 +29,15 @@ For a list of CEXs that support Polygon, visit a third-party tracking website su
 
 :::
 
+:::tip Stay in the know
+
+Keep up with the latest wallet suite updates from the Polygon 
+team and the community by subscribing to the 
+[Polygon notification groups](https://polygon.technology/notifications/).
+
+:::
+
+
 ## Native Wallets
 
 [Polygon Support](https://support.polygon.technology/support/home) can provide assistance to users and address 
