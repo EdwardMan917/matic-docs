@@ -1105,7 +1105,7 @@ Address of the account to be voted for.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    ibft propose --bls 0xa80c73aa30541f67fa783a0a5cc89f61c4dff3c1d37c12473a61d18968363a811ef44657c0f29820f100307d5d0dd234
+    ibft propose --bls 0xa80..
 
   </TabItem>
 </Tabs>

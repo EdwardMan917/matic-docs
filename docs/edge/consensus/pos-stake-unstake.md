@@ -93,6 +93,7 @@ Create an `.env` file with the following parameters in the Smart Contracts repo 
 JSONRPC_URL=http://localhost:10002
 PRIVATE_KEYS=0x0454f3ec51e7d6971fc345998bb2ba483a8d9d30d46ad890434e6f88ecb97544
 STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
+BLS_PUBLIC_KEY=0xa..
 ```
 
 Where the parameters are:
@@ -101,6 +102,7 @@ Where the parameters are:
 * **PRIVATE_KEYS** - private keys of the staker address. Validator's key is stored under the data directory, `[DATA_DIRECTORY]/consensus/validator.key`
 * **STAKING_CONTRACT_ADDRESS** - the address of the staking smart contract (
   default `0x0000000000000000000000000000000000001001`)
+* **BLS_PUBLIC_KEY** - BLS public key of the staker. Only needed if the network is running with the BLS
 
 ### Staking funds
 
@@ -134,6 +136,14 @@ file.
 
 If the funds being staked are `>= 1 ETH`, the validator set on the Staking Smart Contract is updated, and the address
 will be part of the validator set starting from the next epoch.
+
+:::info Registering BLS keys
+If the network is running with the BLS, in order to become a validator, after staking, you need to register BLS public key. 
+To do so run the command:
+```bash
+npm run register-blskey
+```
+:::
 
 ### Unstaking funds
 
