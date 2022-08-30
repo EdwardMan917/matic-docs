@@ -738,7 +738,7 @@ Sets the ID of the chain. Default: `100`.
   </TabItem>
 </Tabs>
 
-Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `ecdsa`.
+Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `bls`.
 
 ---
 
@@ -1105,7 +1105,7 @@ Address of the account to be voted for.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    ibft propose --bls 0xa80..
+    ibft propose --bls 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf
 
   </TabItem>
 </Tabs>
@@ -1241,7 +1241,7 @@ Specifies the height of contract deployment. Only available with PoS.
   </TabItem>
 </Tabs>
 
-Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `ecdsa`.
+Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `bls`.
 
 ---
 
@@ -1656,7 +1656,7 @@ Sets the flag indicating whether to generate a Libp2p Network key. Default: `tru
   </TabItem>
 </Tabs>
 
-Sets the flag indicating whether to generate a BLS key. Default: `false`.
+Sets the flag indicating whether to generate a BLS key. Default: `true`.
 
 ### secrets generate flags
 

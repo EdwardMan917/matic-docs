@@ -145,6 +145,7 @@ you may securely generate the genesis.json with those validators in the initial 
 ```
 [SECRETS INIT]
 Public key (address) = 0xC12bB5d97A35c6919aC77C709d55F6aa60436900
+BLS Public key       = 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf
 Node ID              = 16Uiu2HAmVZnsqvTwuzC9Jd4iycpdnHdyVZJZTpVC8QuRSKmZdUrf
 ```
 
