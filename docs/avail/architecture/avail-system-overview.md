@@ -21,7 +21,7 @@ cannot efficiently handle the execution, settlement, and data availability.
 
 Modularizing execution to scale blockchains is what rollup-centric 
 chain models attempt to do. This can work well when the settlement and 
-data availability layer is on the same layer, which is the approach 
+data availability layers are on the same layer, which is the approach 
 Ethereum rollups take. Still, there are necessary trade-offs when working
 with rollups, as the rollup construction can be more secure depending on 
 the security of the data availability layer but would be inherently more 
@@ -42,14 +42,14 @@ networks. Avail implements an independent network unrelated to Polkadot or Kusam
 :::
 
 Avail provides a high guarantee of data availability to any light client,
-but do not make higher guarantees to light clients about DA than any other 
+but does not make higher guarantees to light clients about DA than any other 
 network. Avail focuses on making it possible to prove that block data is 
 available without downloading the whole block by leveraging Kate polynomial 
 commitments, erasure coding, and other technologies to allow light clients (which
 download only the _headers_ of the chain) to efficiently and randomly
 sample small amounts of the block data to verify its full
 availability. However, there are fundamentally different primitives than 
-fraud-proof-based DA systems, which are explained [here].
+fraud-proof-based DA systems, which are explained [here](https://blog.polygon.technology/the-data-availability-problem-6b74b619ffcc/).
 
 :::info Providing data availability
 
@@ -57,7 +57,7 @@ The DA guarantee is something a client determines for itself; it does not have t
 trust nodes. As the number of light clients grows, they collectively sample the entire 
 block (even though each client only samples a small percentage). Light clients eventually 
 form a p2p network amongst themselves; thus, after a block has been sampled, it becomes 
-highly available—that is, even if the nodes were to go down (or attempt to censor a block), 
+highly available — that is, even if the nodes were to go down (or attempt to censor a block), 
 the light clients would be able to re-construct the block by sharing the pieces amongst 
 themselves.
 
@@ -67,7 +67,7 @@ themselves.
 
 Avail will take rollups to the next level as chains can allocate 
 their data availability component to Avail. Avail also provides an alternative 
-way to bootstrap [any] standalone chain, as chains can offload their data 
+way to bootstrap any standalone chain, as chains can offload their data 
 availability. There are, of course, trade-offs that are made with different modularity 
 approaches, but the overall goal is to maintain high security while being able 
 to scale.
@@ -87,7 +87,7 @@ logic. Whereas in a traditional environment, the network requires a fork.
 
 :::info Avail does not have an execution environment
 
-Avail does not run smart contracts but allows other chains to complete their transaction 
+Avail does not run smart contracts but allows other chains to make their transaction 
 data available through Avail. These chains may implement their execution environments of 
 any kind, EVM, Wasm, or anything else.
 
@@ -152,8 +152,8 @@ Avail's network peers include:
 :::info The goal of Avail is not to be reliant on full nodes to keep data available
 
   The aim is to give similar DA guarantees to a light client as a full node. 
-  Users are encouraged to use Avail light clients. However, users can run Avail 
-  full nodes, which is well supported.
+  Users are encouraged to use Avail light clients. However, they can still run Avail 
+  full nodes, which are well supported.
 
 :::
 
@@ -239,4 +239,4 @@ layer takes on the verification and dispute resolution component.
 ## Resources
 
 - [Introduction to Avail by Polygon blog post](https://medium.com/the-polygon-blog/introducing-avail-by-polygon-a-robust-general-purpose-scalable-data-availability-layer-98bc9814c048).
-- [Polygon Talks: Polygon Avail]
+- [Polygon Talks: Polygon Avail](https://www.youtube.com/watch?v=okqMT1v3xi0)
