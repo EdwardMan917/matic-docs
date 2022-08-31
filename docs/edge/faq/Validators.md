@@ -52,7 +52,7 @@ The minimum staking amount by default is `1 ETH`, and it’s not configurable.
 
 ## Why do the JSON RPC commands `eth_getBlockByNumber` and `eth_getBlockByHash` not return the miner's address?
 
-The consensus used currently in Polygon Edge is IBFT, implemented according to [ethereum/EIPs#650](https://github.com/ethereum/EIPs/issues/650), which, in turn, builds upon the voting mechanism explained in Clique PoA: [ethereum/EIPs#225](https://github.com/ethereum/EIPs/issues/225).
+The consensus used currently in Polygon Edge is IBFT 2.0, which, in turn, builds upon the voting mechanism explained in Clique PoA: [ethereum/EIPs#225](https://github.com/ethereum/EIPs/issues/225).
 
 Looking at the EIP-225 (Clique PoA), this is the relevant part that explains what the `miner` (aka `beneficiary`) is used for:
 
