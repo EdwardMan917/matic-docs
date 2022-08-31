@@ -1656,6 +1656,67 @@ message BlockchainEvent {
 
 ## Utilities
 
+### whitelist commands
+
+| **Command**            | **Description**                                                                     |
+|------------------------|-------------------------------------------------------------------------------------|
+| whitelist show         | Displays whitelist information                     |
+| whitelist deployment   | Updatates smart contract deployment whitelist |
+
+<h3> whitelist show </h3>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    whitelist show
+
+  </TabItem>
+</Tabs>
+
+Displays whitelist information.
+
+---
+
+<h3> whitelist deployment </h3>
+
+<h4><i>add</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    whitelist deployment [--add ADDRESS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    whitelist deployment --add 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d
+
+  </TabItem>
+</Tabs>
+
+Adds a new address to the contract deployment whitelist. Only addresses in the contract deployment whitelist can deploy contracts, if empty anyone can.
+
+---
+
+<h4><i>remove</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    whitelist deployment [--remove ADDRESS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    whitelist deployment --remove 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d
+
+  </TabItem>
+</Tabs>
+
+Removes a new address from the contract deployment whitelist. Only addresses in the contract deployment whitelist can deploy contracts, if empty anyone can.
+
+---
+
 ### loadbot flags
 
 <h4><i>tps</i></h4>
