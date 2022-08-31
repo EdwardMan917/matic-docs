@@ -48,7 +48,7 @@ You can find a detailed guide on how to do this procedure [here](/docs/edge/vali
 
 ## Is the minimum staking amount configurable for PoS Edge? 
 
-The minimum staking amount by is `1 ETH` by default, and it’s not configurable. However, there is a workaround: you can manually edit the `validator_treshold` value and compile a staking contract. 
+The minimum staking amount by default is `1 ETH`, and it’s not configurable. 
 
 ## Why the JSON RPC commands `eth_getBlockByNumber` and `eth_getBlockByHash` don't return the miner's address?
 
