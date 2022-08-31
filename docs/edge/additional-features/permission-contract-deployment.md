@@ -1,0 +1,89 @@
+---
+id: permission-contract-deployment
+title: Permission smart contract deployment
+description: How to add permission smart contract deployment.
+keywords:
+  - docs
+  - polygon
+  - edge
+  - smart contract
+  - permission
+  - deployment
+---
+
+## Overview
+
+This guide goes into detail on how to whitelist addresses that can deploy smart contracts. <br/> 
+Sometimes network operators wish to prevent users from deploying smart contracts that are unrelated to the network's purpose. Network operators can whitelist addresses that can deploy contracts in order to do so. Network operators can add or remove addresses. If the whitelist is empty any address can do the deployment, if not only addresses from the deployment whitelist can. 
+
+:::warning How to apply the changes
+
+This version of the permission contract deployment works off-chain. After updating deployment whitelists, nodes should align so that everyone has an updated whitelist. It is also necessary to restart the nodes in order for the changes to take effect. <br/>
+
+To share an updated whitelist you have 2 options:
+1. Execute the same command on all nodes
+2. Share modified `genesis.json`
+
+:::
+
+## How to use it?
+
+
+You can find all cli commands related to the deployment whitelist in the [CLI Commands](cli-commands#whitelist-commands) page.
+
+* `whitelist show`: Displays whitelist information
+* `whitelist deployment --add`:  Adds a new address to the contract deployment whitelist
+* `whitelist deployment --remove`:  Removes a new address from the contract deployment whitelist
+
+#### Show all addresses in the deployment whitelist
+
+There are 2 ways to find addresses from the deployment whitelist.
+1. Looking at the `genesis.json` where whitelists are saved
+2. Executing `whitelist show`, which prints information for all whitelists supported by Polygon Edge
+
+```bash
+
+polygon-edge % ./polygon-edge whitelist show 
+
+[WHITELISTS]
+
+Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d],
+
+
+```
+
+#### Add address to the deployment whitelist
+
+To add a new address to the deployment whitelist execute `whitelist deployment --add` CLI command. You can add as many addresses as you want. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty anyone can do the deployment.
+
+```bash
+
+polygon-edge % ./polygon-edge whitelist deployment --add 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d --add 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF
+ 
+
+[CONTRACT DEPLOYMENT WHITELIST]
+
+Added addresses: [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF],
+Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF],
+
+
+
+```
+
+#### Remove address from the deployment whitelist
+
+To remove an address from the deployment whitelist execute `whitelist deployment --remove` CLI command. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty anyone can do the deployment.
+
+```bash
+
+polygon-edge % ./polygon-edge whitelist deployment --remove 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d --remove 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF
+ 
+
+[CONTRACT DEPLOYMENT WHITELIST]
+
+Removed addresses: [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF],
+Contract deployment whitelist : [],
+
+
+
+```

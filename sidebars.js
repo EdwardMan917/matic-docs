@@ -1039,6 +1039,7 @@ module.exports = {
               },
               "edge/additional-features/stress-testing",
               "edge/additional-features/blockscout",
+              "edge/additional-features/permission-contract-deployment",
           ]
       },
       {
