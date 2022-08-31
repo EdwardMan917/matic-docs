@@ -50,7 +50,7 @@ You can find a detailed guide on how to do this procedure [here](/docs/edge/vali
 
 The minimum staking amount by default is `1 ETH`, and it’s not configurable. 
 
-## Why the JSON RPC commands `eth_getBlockByNumber` and `eth_getBlockByHash` don't return the miner's address?
+## Why do the JSON RPC commands `eth_getBlockByNumber` and `eth_getBlockByHash` not return the miner's address?
 
 The consensus used currently in Polygon Edge is IBFT, implemented according to [ethereum/EIPs#650](https://github.com/ethereum/EIPs/issues/650), which, in turn, builds upon the voting mechanism explained in Clique PoA: [ethereum/EIPs#225](https://github.com/ethereum/EIPs/issues/225).
 
