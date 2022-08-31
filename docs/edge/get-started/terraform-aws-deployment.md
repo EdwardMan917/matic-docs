@@ -14,7 +14,7 @@ keywords:
 :::info Production deployment guide
 This is the official, production ready, fully automated, AWS deployment guide.   
 
-Manual deployments to the ***[Cloud](set-up-ibft-on-the-cloud)*** or ***[Local](set-up-ibft-locally)*** 
+Manual deployments to the ***[Cloud](set-up-ibft-on-the-cloud)*** or ***[Local](set-up-ibft-locally)***
 are recommended for testing and/or if your cloud provider is not AWS.
 :::
 
@@ -23,7 +23,7 @@ This deployment is PoA only.
 If PoS mechanism is needed, just follow this ***[guide](/docs/edge/consensus/migration-to-pos)*** on now to make a switch from PoA to PoS.
 :::
 
-This guide will, in detail, describe the process of deploying a Polygon Edge blockchain network on the AWS cloud provider, 
+This guide will, in detail, describe the process of deploying a Polygon Edge blockchain network on the AWS cloud provider,
 that is production ready as the validator nodes are spanned across multiple availability zones.
 
 ## Prerequisites
@@ -142,7 +142,7 @@ alb_ssl_certificate = "arn:aws:acm:us-west-2:123456789:certificate/64c7f117-61f5
 * create the `terraform.tfvars` file
 * set the required terraform variables in this file (as explained above).
   :::info
-  There are other non-mandatory variables that can fully customize this deployment. 
+  There are other non-mandatory variables that can fully customize this deployment.
   You can override the default values by adding your own to the `terraform.tfvars` file.   
 
   Specification of all available variables can be found in modules' Terraform ***[registry](https://registry.terraform.io/modules/aws-ia/polygon-technology-edge/aws)***
@@ -155,7 +155,7 @@ alb_ssl_certificate = "arn:aws:acm:us-west-2:123456789:certificate/64c7f117-61f5
 * create a public dns cname record pointing your domain name to the provided `json_rpc_dns_name` value. For example:
   ```shell
   # BIND syntax
-  # NAME                            TTL       CLASS   TYPE      CANONICAL NAME 
+  # NAME                            TTL       CLASS   TYPE      CANONICAL NAME
   rpc.my-awsome-blockchain.com.               IN      CNAME     jrpc-202208123456879-123456789.us-west-2.elb.amazonaws.com.
   ```
 * once the cname record propagates, check if the chain is working properly by calling your JSON-PRC endpoint.   
@@ -163,13 +163,13 @@ alb_ssl_certificate = "arn:aws:acm:us-west-2:123456789:certificate/64c7f117-61f5
   ```shell
     curl  https://rpc.my-awsome-blockchain.com -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
   ```
-  
+
 ## Destroy procedure
 :::warning
 The following procedure will permanently delete your entire infrastructure deployed with these terraform scripts.    
-Make sure you have proper [blockchain data backups](working-with-node/backup-restore) and/or you're working with a testing environment.
+Make sure you have proper [blockchain data backups](docs/edge/working-with-node/backup-restore) and/or you're working with a testing environment.
 :::
 
 If you need to remove the whole infrastructure, run the following command `terraform destroy`.   
-Additionally, you will need to manually remove secrets stored in AWS [Parameter Store](https://aws.amazon.com/systems-manager/features/) 
+Additionally, you will need to manually remove secrets stored in AWS [Parameter Store](https://aws.amazon.com/systems-manager/features/)
 for the region the deployment took place.

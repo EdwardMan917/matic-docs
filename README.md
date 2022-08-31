@@ -9,15 +9,18 @@
 
 <br>
 
-![Forks](https://img.shields.io/github/forks/maticnetwork/matic-docs?style=social)
-![Stars](https://img.shields.io/github/stars/maticnetwork/matic-docs?style=social)
-![Languages](https://img.shields.io/github/languages/count/maticnetwork/matic-docs)
-![Issues](https://img.shields.io/github/issues/maticnetwork/matic-docs)
-![PRs](https://img.shields.io/github/issues-pr-raw/maticnetwork/matic-docs)
-![contributors](https://img.shields.io/github/contributors-anon/maticnetwork/matic-docs)
-![size](https://img.shields.io/github/languages/code-size/maticnetwork/matic-docs)
-[![Discord](https://img.shields.io/discord/714888181740339261?color=1C1CE1&label=Polygon%20%7C%20Discord%20%F0%9F%91%8B%20&style=flat-square)](https://discord.gg/zdwkdvMNY2)
-[![Twitter Follow](https://img.shields.io/twitter/follow/0xPolygon.svg?style=social)](https://twitter.com/0xPolygon)
+<p align="center">
+   <a href="https://github.com/maticnetwork/matic-docs/network/members"><img src="https://img.shields.io/github/forks/maticnetwork/matic-docs?style=social"></a>
+   <img src="https://img.shields.io/github/stars/maticnetwork/matic-docs?style=social">
+   <img src="https://img.shields.io/github/languages/count/maticnetwork/matic-docs">
+   <a href="https://github.com/maticnetwork/matic-docs/issues"><img src="https://img.shields.io/github/issues/maticnetwork/matic-docs"></a>
+   <a href="https://github.com/maticnetwork/matic-docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/maticnetwork/matic-docs"></a>
+   <a href="https://github.com/maticnetwork/matic-docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/maticnetwork/matic-docs"></a>
+   <img src="https://img.shields.io/github/languages/code-size/maticnetwork/matic-docs">
+   <a href="https://discord.gg/zdwkdvMNY2"><img src="https://img.shields.io/discord/714888181740339261?color=1C1CE1&label=Polygon%20%7C%20Discord%20%F0%9F%91%8B%20&style=flat-square"></a>
+   <a href="https://twitter.com/0xPolygon"><img src="https://img.shields.io/twitter/follow/0xPolygon.svg?style=social"></a>
+   
+</p>
 
 Polygon is a scaling solution for public blockchains that combines the best of Ethereum and sovereign blockchains 
 to offer a full-stack scaling solution.

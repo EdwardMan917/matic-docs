@@ -87,8 +87,8 @@ module.exports = {
             from: '/docs/integrate/full-node-deployment',
           },
           {
-            to: '/docs/develop/metamask/overview',
-            from: '/docs/develop/wallets/metamask',
+            to: '/docs/develop/wallets/metamask',
+            from:'/docs/develop/metamask/overview',
           },
           {
             to: '/docs/develop/wallets/getting-started',

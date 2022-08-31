@@ -273,6 +273,25 @@ Sets the client's maximum outbound peer count. If `max-peers` is set, max-outbou
 
 ---
 
+<h4><i>max-enqueued</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--max-enqueued ENQUEUED_TRANSACTIONS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --max-enqueued 210
+
+  </TabItem>
+</Tabs>
+
+Sets the maximum number of enqueued transactions per account. Default:`128`.
+
+---
+
 <h4><i>log-level</i></h4>
 
 <Tabs>
