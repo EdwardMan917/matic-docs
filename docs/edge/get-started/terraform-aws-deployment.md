@@ -40,7 +40,7 @@ Three variables that must be provided, before running the deployment:
 * `alb_ssl_certificate` - the ARN of the certificate from AWS Certificate Manager to be used by ALB for https protocol.   
   The certificate must be generated before starting the deployment, and it must have **Issued** status
 * `premine` - the account that will receive pre mined native currency.
-  Value must follow the official [CLI](cli-commands#genesis-flags) flag specification
+  Value must follow the official [CLI](/docs/edge/get-started/cli-commands#genesis-flags) flag specification
 
 ## Deployment information
 ### Deployed resources

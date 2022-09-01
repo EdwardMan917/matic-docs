@@ -1694,7 +1694,7 @@ Displays whitelist information.
   </TabItem>
 </Tabs>
 
-Adds a new address to the contract deployment whitelist. Only addresses in the contract deployment whitelist can deploy contracts, if empty anyone can.
+Adds a new address to the contract deployment whitelist. Only the addresses in the contract deployment whitelist can deploy contracts. If empty, anyone can.
 
 ---
 
@@ -1713,7 +1713,7 @@ Adds a new address to the contract deployment whitelist. Only addresses in the c
   </TabItem>
 </Tabs>
 
-Removes a new address from the contract deployment whitelist. Only addresses in the contract deployment whitelist can deploy contracts, if empty anyone can.
+Removes a new address from the contract deployment whitelist. Only the addresses in the contract deployment whitelist can deploy contracts. If empty, anyone can.
 
 ---
 

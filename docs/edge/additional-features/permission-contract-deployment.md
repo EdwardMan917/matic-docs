@@ -14,7 +14,7 @@ keywords:
 ## Overview
 
 This guide goes into detail on how to whitelist addresses that can deploy smart contracts. <br/> 
-Sometimes network operators wish to prevent users from deploying smart contracts that are unrelated to the network's purpose. Network operators can whitelist addresses that can deploy contracts in order to do so. Network operators can add or remove addresses. If the whitelist is empty any address can do the deployment, if not only addresses from the deployment whitelist can. 
+Sometimes network operators wish to prevent users from deploying smart contracts that are unrelated to the network's purpose. Network operators can whitelist addresses that can deploy contracts in order to do so. Network operators can add or remove addresses. If the whitelist is empty, any address can do the deployment, if not, only addresses from the deployment whitelist can.
 
 :::warning How to apply the changes
 
@@ -29,7 +29,7 @@ To share an updated whitelist you have 2 options:
 ## How to use it?
 
 
-You can find all cli commands related to the deployment whitelist in the [CLI Commands](cli-commands#whitelist-commands) page.
+You can find all cli commands related to the deployment whitelist in the [CLI Commands](/docs/edge/get-started/cli-commands#whitelist-commands) page.
 
 * `whitelist show`: Displays whitelist information
 * `whitelist deployment --add`:  Adds a new address to the contract deployment whitelist
@@ -54,7 +54,7 @@ Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d],
 
 #### Add address to the deployment whitelist
 
-To add a new address to the deployment whitelist execute `whitelist deployment --add` CLI command. You can add as many addresses as you want. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty anyone can do the deployment.
+To add a new address to the deployment whitelist execute `whitelist deployment --add` CLI command. You can add as many addresses as you want. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty, anyone can do the deployment.
 
 ```bash
 
@@ -72,7 +72,7 @@ Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d 0x30
 
 #### Remove address from the deployment whitelist
 
-To remove an address from the deployment whitelist execute `whitelist deployment --remove` CLI command. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty anyone can do the deployment.
+To remove an address from the deployment whitelist execute `whitelist deployment --remove` CLI command. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty, anyone can do the deployment.
 
 ```bash
 
