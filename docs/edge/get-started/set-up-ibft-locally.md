@@ -79,7 +79,7 @@ Each of these commands will print the validator key, bls public key and the [nod
 
 :::warning Save BLS public key
 
-If the network is running with BLS, which does by default, BLS public key is requred for proposing in the POA mode and for staking in the POS mode. Polygon Edge only saves BLS private key, it is your responsibility to preserve BLS public key.
+If the network is running with BLS, which it does by default, the BLS public key is required for proposing in the PoA mode and for staking in the PoS mode. Polygon Edge only saves BLS private key, it is your responsibility to preserve BLS public key.
 
 :::
 
