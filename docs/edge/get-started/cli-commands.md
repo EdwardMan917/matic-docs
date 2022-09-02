@@ -738,7 +738,7 @@ Sets the ID of the chain. Default: `100`.
   </TabItem>
 </Tabs>
 
-Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `bls`.
+Specifies the validation mode of block headers. Possible values: `[ecdsa, bls]`. Default: `bls`.
 
 ---
 
@@ -1241,7 +1241,7 @@ Specifies the height of contract deployment. Only available with PoS.
   </TabItem>
 </Tabs>
 
-Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `bls`.
+Specifies the validation mode of block headers. Possible values: `[ecdsa, bls]`. Default: `bls`.
 
 ---
 
