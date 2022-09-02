@@ -47,7 +47,7 @@ Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d],
 
 #### Add an address to the deployment whitelist
 
-To add a new address to the deployment whitelist execute `whitelist deployment --add [ADDRESS]` CLI command. You can add as many addresses as you want. Only addresses that exist in the contract deployment whitelist can deploy contracts. If the whitelist is empty, any address can do the deployment
+To add a new address to the deployment whitelist execute `whitelist deployment --add [ADDRESS]` CLI command. There is no limit to the number of addresses present in the whitelist. Only addresses that exist in the contract deployment whitelist can deploy contracts. If the whitelist is empty, any address can do the deployment
 
 ```bash
 
