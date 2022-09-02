@@ -25,7 +25,7 @@ This version of the permission contract deployment works off-chain. After updati
 
 To share an updated whitelist you have 2 options:
 1. Execute the same command on all nodes
-2. Share modified `genesis.json`
+2. Share the modified `genesis.json`
 
 :::
 
