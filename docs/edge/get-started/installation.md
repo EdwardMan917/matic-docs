@@ -14,7 +14,7 @@ Please refer to the installation method more applicable to you.
 
 Our recommendation is to use the pre-built releases and verify the provided checksums.
 
-## Pre-built releases
+## THIS IS A CHANGE
 
 Please refer to the [GitHub Releases](https://github.com/0xPolygon/polygon-edge/releases) page for a list of releases.
 
