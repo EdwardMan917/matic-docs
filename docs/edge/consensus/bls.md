@@ -102,8 +102,6 @@ Node ID              = 16...
 
 `ibft switch` command adds a fork setting, which enables BLS from the middle of the chain, into `genesis.json`.
 
-In the PoS chain, `--ibft-validators-prefix-path` or `--ibft-validator` are not used because validator info (address and BLS Public Key) is stored in the staking contract.
-
 Specify the height from which the chain starts BLS mode for `--from`, and the height at which the contract is updated for `--deployment`.
 
 ```bash
