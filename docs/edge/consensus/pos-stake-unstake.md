@@ -99,7 +99,7 @@ BLS_PUBLIC_KEY=0xa..
 Where the parameters are:
 
 * **JSONRPC_URL** - the JSON-RPC endpoint for the running node
-* **PRIVATE_KEYS** - private keys of the staker address. Validator's key is stored under the data directory, `[DATA_DIRECTORY]/consensus/validator.key`
+* **PRIVATE_KEYS** - private keys of the staker address.
 * **STAKING_CONTRACT_ADDRESS** - the address of the staking smart contract (
   default `0x0000000000000000000000000000000000001001`)
 * **BLS_PUBLIC_KEY** - BLS public key of the staker. Only needed if the network is running with BLS
