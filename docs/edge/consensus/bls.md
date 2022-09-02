@@ -70,7 +70,7 @@ Also the logs shows which verification mode is used to generate each block after
 2022-09-02T11:45:28.728+0300 [INFO]  polygon.ibft: block committed: number=101 hash=0x5f33aa8cea4e849807ca5e350cb79f603a0d69a39f792e782f48d3ea57ac46ca validation_type=bls validators=3 committed=3
 ```
 
-## How to migrate from an existing ECDSA PoS chain to BLS PoS chain
+## How to migrate from an existing ECDSA PoS chain to a BLS PoS chain
 
 This section describes how to use the BLS mode in existing PoS chain.
 The following steps are required in order to enable BLS in PoS chain.
