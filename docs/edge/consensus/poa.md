@@ -48,7 +48,7 @@ polygon-edge ibft propose --grpc-address 127.0.0.1:10000 --addr 0x8B15464F8233F7
 The structure of the IBFT commands is covered in the [CLI Commands](/docs/edge/get-started/cli-commands) section.
 
 :::info BLS public key
-BLS public key is only neccecary if the network is running with the BLS, for the network running with the ecdsa `--bls` is unnecessary
+BLS public key is only necessary if the network is running with the BLS, for the network not running in BLS mode `--bls` is unnecessary
 :::
 
 ### Step 3: Run the client node
@@ -80,7 +80,7 @@ polygon-edge ibft propose --grpc-address 127.0.0.1:10000 --addr 0x8B15464F8233F7
 ````
 
 :::info BLS public key
-BLS public key is only neccecary if the network is running with the BLS, for the network running with the ecdsa `--bls` is unnecessary
+BLS public key is only necessary if the network is running with the BLS, for the network not running in BLS mode `--bls` is unnecessary
 :::
 
 After the commands are performed, observe that the number of validators has dropped (in this log example from 4 to 3).
