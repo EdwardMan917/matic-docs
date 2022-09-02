@@ -19,16 +19,6 @@ Sometimes network operators wish to prevent users from deploying smart contracts
 1. Whitelist addresses for Smart Contract deployment
 2. Remove addresses from the whitelist for Smart Contract deployment
 
-:::warning How to apply the changes
-
-This version of the permission contract deployment works off-chain. After updating deployment whitelists, nodes should align so that everyone has an updated whitelist. It is also necessary to restart the nodes in order for the changes to take effect. <br/>
-
-To share an updated whitelist you have 2 options:
-1. Execute the same command on all nodes
-2. Share the modified `genesis.json`
-
-:::
-
 ## How to use it?
 
 
