@@ -127,3 +127,4 @@ You can sign up for a dedicated free RPC URL at the following:
 * [QuickNode](https://www.quicknode.com/chains/matic)
 * [SettleMint](https://docs.settlemint.com/docs/polygon-connect-to-a-node)
 * [WatchData](https://docs.watchdata.io/blockchain-apis/polygon-api)
+* [NOWNodes](https://nownodes.io/nodes/polygon-matic)

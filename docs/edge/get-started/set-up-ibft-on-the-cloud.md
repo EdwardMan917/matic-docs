@@ -78,7 +78,13 @@ node-3> polygon-edge secrets init --data-dir data-dir
 node-4> polygon-edge secrets init --data-dir data-dir
 ````
 
-Each of these commands will print the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need that information for the next step.
+Each of these commands will print the validator key, bls public key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
+
+:::warning Save BLS public key
+
+If the network is running with BLS, which it does by default, the BLS public key is required for proposing in the PoA mode and for staking in the PoS mode. Polygon Edge only saves BLS private key, it is your responsibility to preserve BLS public key.
+
+:::
 
 :::warning Keep your data directory to yourself!
 
@@ -145,6 +151,7 @@ you may securely generate the genesis.json with those validators in the initial 
 ```
 [SECRETS INIT]
 Public key (address) = 0xC12bB5d97A35c6919aC77C709d55F6aa60436900
+BLS Public key       = 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf
 Node ID              = 16Uiu2HAmVZnsqvTwuzC9Jd4iycpdnHdyVZJZTpVC8QuRSKmZdUrf
 ```
 
@@ -418,4 +425,20 @@ polygon-edge server --price-limit 100000 ...
 
 It is worth noting that price limits **are enforced only on non-local transactions**, meaning
 that the price limit does not apply to transactions added locally on the node.
+:::
+
+:::info WebSocket URL
+By default, when you run the Polygon Edge, it generates a WebSocket URL based on the chain location.
+The URL scheme `wss://` is used for HTTPS links, and `ws://` for HTTP.
+
+Localhost WebSocket URL:
+````bash
+ws://localhost:10002/ws
+````
+Please note that the port number depends on the chosen JSON-RPC port for the node.
+
+Edgenet WebSocket URL:
+````bash
+wss://rpc-edgenet.polygon.technology/ws
+````
 :::

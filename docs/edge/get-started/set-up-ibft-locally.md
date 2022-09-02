@@ -75,7 +75,13 @@ polygon-edge secrets init --data-dir test-chain-3
 polygon-edge secrets init --data-dir test-chain-4
 ````
 
-Each of these commands will print the validator key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
+Each of these commands will print the validator key, bls public key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
+
+:::warning Save BLS public key
+
+If the network is running with BLS, which it does by default, the BLS public key is required for proposing in the PoA mode and for staking in the PoS mode. Polygon Edge only saves BLS private key, it is your responsibility to preserve BLS public key.
+
+:::
 
 ## Step 2: Prepare the multiaddr connection string for the bootnode
 
@@ -390,6 +396,24 @@ polygon-edge server --price-limit 100000 ...
 It is worth noting that price limits **are enforced only on non-local transactions**, meaning
 that the price limit does not apply to transactions added locally on the node.
 :::
+
+:::info WebSocket URL
+By default, when you run the Polygon Edge, it generates a WebSocket URL based on the chain location.
+The URL scheme `wss://` is used for HTTPS links, and `ws://` for HTTP.
+
+Localhost WebSocket URL:
+````bash
+ws://localhost:10002/ws
+````
+Please note that the port number depends on the chosen JSON-RPC port for the node.
+
+Edgenet WebSocket URL:
+````bash
+wss://rpc-edgenet.polygon.technology/ws
+````
+:::
+
+
 
 ## Step 5: Interact with the polygon-edge network
 

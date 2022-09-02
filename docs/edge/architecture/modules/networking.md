@@ -61,8 +61,8 @@ service System {
     rpc Subscribe(google.protobuf.Empty) returns (stream BlockchainEvent);
 }
 ````
-:::tip 
-The CLI commands actually call the implementations of these service methods. 
+:::tip
+The CLI commands actually call the implementations of these service methods.
 
 These methods are implemented in ***minimal/system_service.go***.
 :::
@@ -70,7 +70,7 @@ These methods are implemented in ***minimal/system_service.go***.
 ### GRPC for Other Nodes
 
 The Polygon Edge also implements several service methods that are used by other nodes on the network. <br />
-The mentioned service is described in the **[Protocol](/docs/edge/architecture/modules/protocol)** section.
+The mentioned service is described in the **[Protocol](docs/edge/architecture/modules/consensus)** section.
 
 ## 📜 Resources
 * **[Protocol Buffers](https://developers.google.com/protocol-buffers)**

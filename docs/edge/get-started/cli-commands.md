@@ -273,6 +273,25 @@ Sets the client's maximum outbound peer count. If `max-peers` is set, max-outbou
 
 ---
 
+<h4><i>max-enqueued</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--max-enqueued ENQUEUED_TRANSACTIONS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --max-enqueued 210
+
+  </TabItem>
+</Tabs>
+
+Sets the maximum number of enqueued transactions per account. Default:`128`.
+
+---
+
 <h4><i>log-level</i></h4>
 
 <Tabs>
@@ -719,7 +738,7 @@ Sets the ID of the chain. Default: `100`.
   </TabItem>
 </Tabs>
 
-Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `ecdsa`.
+Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `bls`.
 
 ---
 
@@ -757,7 +776,9 @@ Prefix path for validator folder directory. Needs to be present if the flag `ibf
   </TabItem>
 </Tabs>
 
-Sets passed in addresses as IBFT validators. Needs to be present if the flag `ibft-validators-prefix-path` is omitted.
+Sets passed addresses as IBFT validators. Needs to be present if the flag `ibft-validators-prefix-path` is omitted.
+1. If the network is running with ECDSA, the format is `--ibft-validator [ADDRESS]`. 
+2. If the network is running with BLS, the format is  `--ibft-validator [ADDRESS][BLS_PUBLIC_KEY]`.
 
 ---
 
@@ -1074,6 +1095,25 @@ Address of the account to be voted for.
 
 ---
 
+<h4><i>bls</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    ibft propose --bls BLS_PUBLIC_KEY
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    ibft propose --bls 0x9952735ca14734955e114a62e4c26a90bce42b4627a393418372968fa36e73a0ef8db68bba11ea967ff883e429b3bfdf
+
+  </TabItem>
+</Tabs>
+
+BLS Public Key of the account to be voted for, necessary only in BLS mode.
+
+---
+
 <h4><i>grpc-address</i></h4>
 
 <Tabs>
@@ -1191,17 +1231,17 @@ Specifies the height of contract deployment. Only available with PoS.
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    genesis [--ibft-validator-type IBFT_VALIDATOR_TYPE]
+     ibft switch [--ibft-validator-type IBFT_VALIDATOR_TYPE]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    genesis --ibft-validator-type ecdsa
+     ibft switch --ibft-validator-type ecdsa
 
   </TabItem>
 </Tabs>
 
-Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `ecdsa`.
+Specifies the verification type of CommittedSeals and ParentCommittedSeals in IBFT.  Possible values: `[ecdsa, bls]`. Default: `bls`.
 
 ---
 
@@ -1210,12 +1250,12 @@ Specifies the verification type of CommittedSeals and ParentCommittedSeals in IB
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    genesis [--ibft-validators-prefix-path IBFT_VALIDATORS_PREFIX_PATH]
+     ibft switch [--ibft-validators-prefix-path IBFT_VALIDATORS_PREFIX_PATH]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    genesis --ibft-validators-prefix-path test-chain-
+     ibft switch --ibft-validators-prefix-path test-chain-
 
   </TabItem>
 </Tabs>
@@ -1229,17 +1269,19 @@ Prefix path for folder directory of as IBFT validators used after the fork. Need
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    genesis [--ibft-validator IBFT_VALIDATOR_LIST]
+     ibft switch [--ibft-validator IBFT_VALIDATOR_LIST]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    genesis --ibft-validator 0xC12bB5d97A35c6919aC77C709d55F6aa60436900
+     ibft switch --ibft-validator 0xC12bB5d97A35c6919aC77C709d55F6aa60436900
 
   </TabItem>
 </Tabs>
 
 Sets passed in addresses as IBFT validators used after the fork. Needs to be present if the flag `ibft-validators-prefix-path` is omitted. Available only in PoA mode.
+1. If the network is running with ECDSA, the format is `--ibft-validator [ADDRESS]`. 
+2. If the network is running with BLS, the format is  `--ibft-validator [ADDRESS][BLS_PUBLIC_KEY]`.
 
 ---
 
@@ -1571,7 +1613,7 @@ Sets the directory for the Polygon Edge data if the local FS is used.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    secrets init --ecdsa true
+    secrets init --ecdsa=false
 
   </TabItem>
 </Tabs>
@@ -1590,7 +1632,7 @@ Sets the flag indicating whether to generate an ECDSA key. Default: `true`.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    secrets init --network true
+    secrets init --network=false
 
   </TabItem>
 </Tabs>
@@ -1609,12 +1651,12 @@ Sets the flag indicating whether to generate a Libp2p Network key. Default: `tru
   </TabItem>
   <TabItem value="example" label="Example">
 
-    secrets init --bls false
+    secrets init --bls
 
   </TabItem>
 </Tabs>
 
-Sets the flag indicating whether to generate a BLS key. Default: `false`.
+Sets the flag indicating whether to generate a BLS key. Default: `true`.
 
 ### secrets generate flags
 
