@@ -778,7 +778,7 @@ Prefix path for validator folder directory. Needs to be present if the flag `ibf
 
 Sets passed addresses as IBFT validators. Needs to be present if the flag `ibft-validators-prefix-path` is omitted.
 1. If the network is running with ECDSA, the format is `--ibft-validator [ADDRESS]`. 
-2. If the network is running with BLS, the format is  `--ibft-validator [ADDRESS][BLS_PUBLIC_KEY]`.
+2. If the network is running with BLS, the format is  `--ibft-validator [ADDRESS]:[BLS_PUBLIC_KEY]`.
 
 ---
 
