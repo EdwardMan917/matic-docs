@@ -58,7 +58,7 @@ It is located in `keystore/libp2p.key`, and adheres to the [key format](/docs/ed
 
 ## BLS Secret Key
 
-The BLS secret key file is used to aggregate committed seals in the consensus layer. The size of aggregated committed seals by BLS is less than the committed seals signed by ECDSA.
+The BLS secret key file is used to aggregate committed seals in the consensus layer. The size of aggregated committed seals by BLS is less than the serialized committed ECDSA signatures.
 
 The BLS feature is optional and, you can choose whether to use BLS or not. Refer [BLS](/docs/edge/consensus/bls) for more details.
 
