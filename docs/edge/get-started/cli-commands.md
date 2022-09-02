@@ -1661,7 +1661,7 @@ message BlockchainEvent {
 | **Command**            | **Description**                                                                     |
 |------------------------|-------------------------------------------------------------------------------------|
 | whitelist show         | Displays whitelist information                     |
-| whitelist deployment   | Updatates smart contract deployment whitelist |
+| whitelist deployment   | Updatates the smart contract deployment whitelist |
 
 <h3> whitelist show </h3>
 
@@ -1694,7 +1694,7 @@ Displays whitelist information.
   </TabItem>
 </Tabs>
 
-Adds a new address to the contract deployment whitelist. Only the addresses in the contract deployment whitelist can deploy contracts. If empty, anyone can.
+Adds a new address to the contract deployment whitelist. Only the addresses in the contract deployment whitelist can deploy contracts. If empty, any address can execute the contract deployment
 
 ---
 
@@ -1713,7 +1713,7 @@ Adds a new address to the contract deployment whitelist. Only the addresses in t
   </TabItem>
 </Tabs>
 
-Removes a new address from the contract deployment whitelist. Only the addresses in the contract deployment whitelist can deploy contracts. If empty, anyone can.
+Removes an address from the contract deployment whitelist. Only the addresses in the contract deployment whitelist can deploy contracts. If empty, any address can execute the contract deployment
 
 ---
 
