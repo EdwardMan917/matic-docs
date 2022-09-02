@@ -1661,7 +1661,7 @@ message BlockchainEvent {
 | **Command**            | **Description**                                                                     |
 |------------------------|-------------------------------------------------------------------------------------|
 | whitelist show         | Displays whitelist information                     |
-| whitelist deployment   | Updatates the smart contract deployment whitelist |
+| whitelist deployment   | Updates the smart contract deployment whitelist |
 
 <h3> whitelist show </h3>
 
