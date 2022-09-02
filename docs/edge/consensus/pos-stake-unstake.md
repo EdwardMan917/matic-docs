@@ -138,8 +138,10 @@ If the funds being staked are `>= 1 ETH`, the validator set on the Staking Smart
 will be part of the validator set starting from the next epoch.
 
 :::info Registering BLS keys
-If the network is running with the BLS, in order to become a validator, after staking, you need to register BLS public key. 
-To do so run the command:
+If the network is running in BLS mode, in order for nodes to become validators, they need to register their BLS public keys after staking
+
+This can be done with the following command:
+
 ```bash
 npm run register-blskey
 ```
