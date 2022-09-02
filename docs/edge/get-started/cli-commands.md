@@ -1260,7 +1260,7 @@ Specifies the verification type of CommittedSeals and ParentCommittedSeals in IB
   </TabItem>
 </Tabs>
 
-Prefix path for folder directory of as IBFT validators used after the fork. Needs to be present if the flag `ibft-validator` is omitted. Available only in PoA mode.
+Prefix path for the directories of new validators. Needs to be present if the flag `ibft-validator` is omitted. Available only when the IBFT mode is PoA (`--pos` flag is omitted).
 
 ---
 
