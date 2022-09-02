@@ -13,8 +13,11 @@ keywords:
 
 ## Overview
 
-This guide goes into detail on how to whitelist addresses that can deploy smart contracts. <br/> 
-Sometimes network operators wish to prevent users from deploying smart contracts that are unrelated to the network's purpose. Network operators can whitelist addresses that can deploy contracts in order to do so. Network operators can add or remove addresses. If the whitelist is empty, any address can do the deployment, if not, only addresses from the deployment whitelist can.
+This guide goes into detail on how to whitelist addresses that can deploy smart contracts.
+Sometimes network operators wish to prevent users from deploying smart contracts that are unrelated to the network's purpose. Network operators can:
+
+1. Whitelist addresses for Smart Contract deployment
+2. Remove addresses from the whitelist for Smart Contract deployment
 
 :::warning How to apply the changes
 
