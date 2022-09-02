@@ -36,7 +36,7 @@ There are 2 ways to find addresses from the deployment whitelist.
 
 ```bash
 
-polygon-edge % ./polygon-edge whitelist show 
+./polygon-edge whitelist show 
 
 [WHITELISTS]
 
@@ -51,7 +51,7 @@ To add a new address to the deployment whitelist execute `whitelist deployment -
 
 ```bash
 
-polygon-edge % ./polygon-edge whitelist deployment --add 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d --add 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF
+./polygon-edge whitelist deployment --add 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d --add 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF
  
 
 [CONTRACT DEPLOYMENT WHITELIST]
@@ -69,7 +69,7 @@ To remove an address from the deployment whitelist execute `whitelist deployment
 
 ```bash
 
-polygon-edge % ./polygon-edge whitelist deployment --remove 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d --remove 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF
+./polygon-edge whitelist deployment --remove 0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d --remove 0x30ea4435167Ee91f9f874b5a894F3282A956C3FF
  
 
 [CONTRACT DEPLOYMENT WHITELIST]
