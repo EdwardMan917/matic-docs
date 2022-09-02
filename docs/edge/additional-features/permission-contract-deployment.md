@@ -45,9 +45,9 @@ Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d],
 
 ```
 
-#### Add address to the deployment whitelist
+#### Add an address to the deployment whitelist
 
-To add a new address to the deployment whitelist execute `whitelist deployment --add` CLI command. You can add as many addresses as you want. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty, anyone can do the deployment.
+To add a new address to the deployment whitelist execute `whitelist deployment --add` CLI command. You can add as many addresses as you want. Only addresses that exist in the contract deployment whitelist can deploy contracts. If the whitelist is empty, any address can do the deployment
 
 ```bash
 
@@ -63,9 +63,9 @@ Contract deployment whitelist : [0x5383Cb489FaCa92365Bb6f9f1FB40bD032E6365d 0x30
 
 ```
 
-#### Remove address from the deployment whitelist
+#### Remove an address from the deployment whitelist
 
-To remove an address from the deployment whitelist execute `whitelist deployment --remove` CLI command. Only addresses that exists in the contract deployment whitelist can deploy contracts. If the whitelist is empty, anyone can do the deployment.
+To remove an address from the deployment whitelist execute `whitelist deployment --remove` CLI command. Only addresses that exist in the contract deployment whitelist can deploy contracts. If the whitelist is empty, any address can do the deployment
 
 ```bash
 
