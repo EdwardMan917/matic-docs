@@ -102,7 +102,7 @@ Node ID              = 16...
 
 `ibft switch` command adds a fork setting, which enables BLS from the middle of the chain, into `genesis.json`.
 
-Specify the height from which the chain starts BLS mode for `--from`, and the height at which the contract is updated for `--deployment`.
+Specify the height from which the chain starts using the BLS mode with the `from` flag, and the height at which the contract is updated with the `development` flag.
 
 ```bash
 polygon-edge ibft switch --chain ./genesis.json --type PoS --ibft-validator-type bls --deployment 50 --from 200
@@ -110,7 +110,7 @@ polygon-edge ibft switch --chain ./genesis.json --type PoS --ibft-validator-type
 
 ### 4. Register BLS Public Key in staking contract
 
-After the fork is added and validators are restarted, each validator needs to call staking contract to register BLS Public Key. This must be done after the height specified in `--deployment` before the height specified in `--from`.
+After the fork is added and validators are restarted, each validator needs to call `registerBLSPublicKey` in the staking contract to register the BLS Public Key. This must be done after the height specified in `--deployment` before the height specified in `--from`.
 
 The script to register BLS Public Key is defined in [Staking Smart Contract repo](https://github.com/0xPolygon/staking-contracts). 
 
@@ -123,14 +123,14 @@ PRIVATE_KEYS=0x...
 BLS_PUBLIC_KEY=0x...
 ```
 
-The following command register the BLS Public Key given in `.env` to the contract.
+The following command registers the BLS Public Key given in `.env` to the contract.
 
 ```bash
 npm run register-blskey
 ```
 
-:::warning Validators need to register BLS Public Key manually
-In BLS mode, validators must have their own address and BLS public key. The consensus layer ignores the validators that have not registered BLS public key in the contract when the consensus fetches validators info from the contract.
+:::warning Validators need to register the BLS Public Key manually
+In BLS mode, validators must have their own address and the BLS public key. The consensus layer ignores the validators that have not registered BLS public key in the contract when the consensus fetches validator info from the contract.
 :::
 
 ### 5. Restart all nodes
