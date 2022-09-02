@@ -1677,7 +1677,43 @@ Displays whitelist information.
 
 ---
 
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    whitelist show [--chain GENESIS_FILE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    whitelist show --chain genesis.json
+
+  </TabItem>
+</Tabs>
+
+Specifies the genesis file to update. Default: `./genesis.json`.
+
+---
+
 <h3> whitelist deployment </h3>
+
+<h4><i>chain</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    whitelist deployment [--chain GENESIS_FILE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    whitelist deployment --chain genesis.json
+
+  </TabItem>
+</Tabs>
+
+Specifies the genesis file to update. Default: `./genesis.json`.
+
+---
 
 <h4><i>add</i></h4>
 
