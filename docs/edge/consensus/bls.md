@@ -31,7 +31,7 @@ the following steps are required in order to enable BLS in a PoA chain.
 
 Terminate all processes of the validators by pressing Ctrl + c (Control + c). Please remember the latest block height (the highest sequence number in block committed log).
 
-### 2. Generate BLS key
+### 2. Generate the BLS key
 
 `secrets init` with the `--bls` generates a BLS key. In order to keep the existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
 
@@ -72,8 +72,8 @@ Also the logs shows which verification mode is used to generate each block after
 
 ## How to migrate from an existing ECDSA PoS chain to a BLS PoS chain
 
-This section describes how to use the BLS mode in existing PoS chain.
-The following steps are required in order to enable BLS in PoS chain.
+This section describes how to use the BLS mode in an existing PoS chain.
+The following steps are required in order to enable BLS in the PoS chain.
 
 1. Stop all nodes
 2. Generate the BLS keys for validators
@@ -85,7 +85,7 @@ The following steps are required in order to enable BLS in PoS chain.
 
 Terminate all processes of the validators by pressing Ctrl + c (Control + c). Please remember the latest block height (the highest sequence number in block committed log).
 
-### 2. Generate BLS key
+### 2. Generate the BLS key
 
 `secrets init` with the `--bls` flag generates the BLS key. In order to keep existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
 
