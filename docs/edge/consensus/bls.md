@@ -19,8 +19,8 @@ Refer to the [Local Setup](/docs/edge/get-started/set-up-ibft-locally) / [Cloud 
 
 ## How to migrate from an existing ECDSA PoA chain to BLS PoA chain
 
-This section describes how to use the BLS mode in existing PoA chain.
-the following steps are required in order to enable BLS in PoA chain.
+This section describes how to use the BLS mode in an existing PoA chain.
+the following steps are required in order to enable BLS in a PoA chain.
 
 1. Stop all nodes
 2. Generate BLS keys for validators
