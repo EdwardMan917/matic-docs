@@ -23,24 +23,17 @@ This section describes how to use the BLS mode in an existing PoA chain.
 the following steps are required in order to enable BLS in a PoA chain.
 
 1. Stop all nodes
-2. Generate BLS keys for validators
-3. Add fork settings into genesis.json
-4. Confirm block generatation after the `from` block
+2. Generate the BLS keys for validators
+3. Add a fork setting into genesis.json
+4. Restart all nodes
 
 ### 1. Stop all nodes
+
 Terminate all processes of the validators by pressing Ctrl + c (Control + c). Please remember the latest block height (the highest sequence number in block committed log).
 
-```bash
-# Press Ctrl + c
-
-...
-
-[SIGNAL] Caught signal: interrupt
-Gracefully shutting down client...
-```
 ### 2. Generate BLS key
 
-As mentioned above, `secrets init` with `--bls` flag can generate the BLS key. In order to keep the existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
+`secrets init` with the `--bls` generates a BLS key. In order to keep the existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
 
 ```bash
 polygon-edge secrets init --bls --ecdsa=false --network=false
@@ -51,21 +44,31 @@ BLS Public key       = 0x...
 Node ID              = 16...
 ```
 
-### 3. Add fork settings
+### 3. Add fork setting
 
-`ibft switch` command adds fork setting, which enables BLS in the middle, into `genesis.json`.
+`ibft switch` command adds a fork setting, which enables BLS in the existing chain, into `genesis.json`.
 
-For PoA chain, validators need to be given in the command. As with the way of `genesis` command, `--ibft-validators-prefix-path` or `--ibft-validator` flags can be used to specify the validator.
+For PoA networks, validators need to be given in the command. As with the way of `genesis` command, `--ibft-validators-prefix-path` or `--ibft-validator` flags can be used to specify the validator.
 
-Specify the height from which the chain starts BLS mode for `--from`.
+Specify the height from which the chain starts using BLS with the `--from` flag.
 
 ```bash
 polygon-edge ibft switch --chain ./genesis.json --type PoA --ibft-validator-type bls --ibft-validators-prefix-path test-chain- --from 100
 ```
 
-### 4. Confirm block generatation after the `from` block
+### 4. Restart all nodes
 
-Run server command to restart all validators and make sure block production happens after `from` you specified in the previous step.
+Restart all nodes by `server` command. After the block at the `from` specified in the previous step is created, the chain enables the BLS and shows logs as below:
+
+```bash
+2022-09-02T11:45:24.535+0300 [INFO]  polygon.ibft: IBFT validation type switched: old=ecdsa new=bls
+```
+
+Also the logs shows which verification mode is used to generate each block after the block is created.
+
+```
+2022-09-02T11:45:28.728+0300 [INFO]  polygon.ibft: block committed: number=101 hash=0x5f33aa8cea4e849807ca5e350cb79f603a0d69a39f792e782f48d3ea57ac46ca validation_type=bls validators=3 committed=3
+```
 
 ## How to migrate from an existing ECDSA PoS chain to BLS PoS chain
 
@@ -73,25 +76,18 @@ This section describes how to use the BLS mode in existing PoS chain.
 The following steps are required in order to enable BLS in PoS chain.
 
 1. Stop all nodes
-2. Generate BLS keys for validators
-3. Add fork settings into genesis.json
+2. Generate the BLS keys for validators
+3. Add a fork setting into genesis.json
 4. Call the staking contract to register BLS Public Key
-5. Confirm block generatation after the `from` block
+5. Restart all nodes
 
 ### 1. Stop all nodes
+
 Terminate all processes of the validators by pressing Ctrl + c (Control + c). Please remember the latest block height (the highest sequence number in block committed log).
 
-```bash
-# Press Ctrl + c
-
-...
-
-[SIGNAL] Caught signal: interrupt
-Gracefully shutting down client...
-```
 ### 2. Generate BLS key
 
-As mentioned above, `secrets init` with `--bls` flag can generate BLS key. In order to keep existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
+`secrets init` with the `--bls` flag generates the BLS key. In order to keep existing ECDSA and Network key and add a new BLS key, `--ecdsa` and `--network` need to be disabled.
 
 ```bash
 polygon-edge secrets init --bls --ecdsa=false --network=false
@@ -102,9 +98,9 @@ BLS Public key       = 0x...
 Node ID              = 16...
 ```
 
-### 3. Add fork settings
+### 3. Add fork setting
 
-`ibft switch` command adds fork setting, which enables BLS in the middle, into `genesis.json`.
+`ibft switch` command adds a fork setting, which enables BLS from the middle of the chain, into `genesis.json`.
 
 In the PoS chain, `--ibft-validators-prefix-path` or `--ibft-validator` are not used because validator info (address and BLS Public Key) is stored in the staking contract.
 
@@ -139,6 +135,6 @@ npm run register-blskey
 In BLS mode, validators must have their own address and BLS public key. The consensus layer ignores the validators that have not registered BLS public key in the contract when the consensus fetches validators info from the contract.
 :::
 
-### 5. Confirm block generatation after the `from` block
+### 5. Restart all nodes
 
-Run server command to restart all validators and make sure block production happens after `from` you specified in the previous step.
+Restart all nodes by `server` command. The chain enables the BLS after the block at the `from` specified in the previous step is created.
