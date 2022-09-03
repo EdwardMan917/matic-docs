@@ -56,9 +56,9 @@ This is the flow of the Watch Sync process:
 Performance was measured on a local machine by syncing a ** million blocks **
 :::
 
-| Name                 | Result         |
-|----------------------|----------------|
-| Syncing 1M blocks    | ~ 25 min       | 
-| Tranfering 1M blocks | ~ 1 min        | 
-| Number of GRPC calls | 2              |
-| Test coverage        | ~ 93%          |
+| Name                   | Result         |
+|------------------------|----------------|
+| Syncing 1M blocks      | ~ 25 min       | 
+| Transferring 1M blocks | ~ 1 min        | 
+| Number of GRPC calls   | 2              |
+| Test coverage          | ~ 93%          |
