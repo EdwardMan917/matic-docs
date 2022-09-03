@@ -16,8 +16,10 @@ image: https://matic.network/banners/matic-network-16x9.png
 Beta 1.0 was released in May 17th, 2022. It included the basic mechanism to have Nightfall proof of concept deployed.
 It supported a single `Proposer` and first `coarse` implementation of transactions. It also provided a preliminary
 version of a user wallet.
+Deployed version can be found [here](https://github.com/EYBlockchain/nightfall_3/commit/bc3e475de3e2877f14430f9599e5b38ea960765b)
 
 ## Beta 2.0
+Deployed version can be found [here](https://github.com/EYBlockchain/nightfall_3/commit/4c2af01ac95af5ea6f5b40071d73a1624f06ba46)
 Several improvements have been made:
 - **Collecting Fees** 
 

@@ -1119,6 +1119,7 @@ module.exports = {
             "edge/faq/contracts",
             "edge/faq/tokens",
         ]
-    }
+    },
+    "edge/troubleshooting"
   ]
 };
